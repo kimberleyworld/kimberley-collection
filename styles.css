@@ -13,22 +13,44 @@ hr {
 section{
     margin: 0 10%;
 }
-a {
-    text-decoration: none;
-    color: black;
-}
-.add {
+
+.weightInfo{
     border-style: solid;
     border-width: 1px;
     border-radius: 25px;
     border-color: saddlebrown;
-    width: 150px;
-    height: 250px;
+    width: 30%;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+.weightInfo h1{
+    text-align: center;
+}
+.weightInfo img{
+    max-height: 170px;
+}
+.weightText{
+    background-color: aquamarine;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+/*.add {*/
+/*    border-style: solid;*/
+/*    border-width: 1px;*/
+/*    border-radius: 25px;*/
+/*    border-color: saddlebrown;*/
+/*    width: 150px;*/
+/*    height: 250px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    flex-direction: column;*/
+/*}*/
 
 @media only screen and (max-width: 700px) {
     header {
