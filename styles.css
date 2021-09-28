@@ -1,4 +1,37 @@
+
+body {
+    font-family: Optima, sans-serif;
+}
 header {
     margin: 10%;
     line-height: 50px;
+    color: saddlebrown;
+}
+hr {
+    margin: 10% 0;
+}
+section{
+    margin: 0 10%;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.add {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+    border-color: saddlebrown;
+    width: 150px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 700px) {
+    header {
+        text-align: center;
+    }
 }
