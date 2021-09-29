@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 
 
 class Database extends TestCase{
-    public function testgenerateHtml(){
+    public function testGenerateHtml(){
         $testdata = [[
             "name" => "jane",
             "main-colour" => "plain",
@@ -27,13 +27,13 @@ class Database extends TestCase{
         $expected .='</div>';
         $this->assertEquals($case, $expected);
     }
-    public function testFailuregenerateHtml() {
+    public function testFailureGenerateHtml() {
         $fakeArray = [];
         $expected = 'No info';
         $case = generateHtml($fakeArray);
         $this->assertEquals($expected, $case);
     }
-    public function testMalformedgenerateHtml()
+    public function testMalformedGenerateHtml()
     {
         $this->expectException(TypeError::class);
         generateHtml(3);

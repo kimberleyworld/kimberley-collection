@@ -13,7 +13,6 @@ function retrievePaperWeights($db){
     return $query->fetchAll();
 
 }
-
 function generateHtml(array $paperweights) : string
 {
     $displayString = '';
