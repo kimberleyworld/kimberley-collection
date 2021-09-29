@@ -12,39 +12,19 @@ $paperweights = $query->fetchAll();
 //var_dump($paperweights);
 //echo '</pre>';
 
-
-//function getName (array $dbSource){
-//    return $dbSource['name'];
-//}
-//
-//function getImage (array $dbSource){
-//    return $dbSource['img-url'];
-//}
-//
-//function retrieveItemFromArray(array $arr, string $key)
-//{
-//    return $arr[$key];
-//}
-//
-//echo getImage($paperWInfo[4]);
-//echo retrieveItemFromArray($paperWInfo[4], 'img-url');
-//$data = ['name' => 'kimberley'];
-//$name = 'kimberley';
-//echo '<h1>. $data["name"] .</h1>';
-
 function generateHtml(array $paperweights) : string
 {
      $displayString = '';
 
     foreach ($paperweights as $key => $output) {
-        $displayString .= '<div class="weightInfo">';
-        $displayString .= "<h1>" . $output['name'] . "</h1> ";
-        $displayString .= '<div class="weightText">' . "<p>Colour: " .   $output['main-colour'] . "</p>" ;
+        $displayString .= '<div class="weightInfo">' . " <img src='" . $output['img-url'] . "' /><br>";
+        $displayString .= '<div>' . "<h1>" . $output['name'] . "</h1> ";
+        $displayString .=  "<p>Colour: " .   $output['main-colour'] . "</p>" ;
         $displayString .= "<p>Category: " . $output['category'] . "</p>";
         $displayString .= "<p>Material: " .$output['material'] . "</p>";
         $displayString .= "<p>Size: " . $output['size'] . "</p>";
         $displayString .= "<p>Heavyness: " . $output['heavyness'] . "</p>" . '</div>';
-        $displayString .= " <img src='" . $output['img-url'] . "' /><br>". '</div>';
+        $displayString .= '</div>';
     }
 
     return $displayString;
@@ -69,12 +49,9 @@ $result = generateHtml($paperweights);
 <html lang="en">
 <head>
   <title>PAPERWEIGHT-WORLD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <meta name="viewport" content="width=device-width,
- initial-scale=1.0">
 </head>
-
-
 
 <body>
     <header>
@@ -83,14 +60,12 @@ $result = generateHtml($paperweights);
         <hr>
     </header>
 
-
-    <section>
-            <div class="weightInfo">
-                <a href="https://www.google.com/search?q=cats&rlz=1C5CHFA_enGB969GB969&oq=cats&aqs=chrome..69i57j46i67i433j0i433i457i512j0i402l2j46i199i291i433i512j46i433i512j0i433i512l2j0i512.977j0j7&sourceid=chrome&ie=UTF-8" target="_blank" >
-                <h1>+</h1>
-                </a>
-                <p>ADD</p>
-            </div>
+<!--            <div class="weightInfo" id="add">-->
+<!--                <a href="https://www.google.com/search?q=cats&rlz=1C5CHFA_enGB969GB969&oq=cats&aqs=chrome..69i57j46i67i433j0i433i457i512j0i402l2j46i199i291i433i512j46i433i512j0i433i512l2j0i512.977j0j7&sourceid=chrome&ie=UTF-8" target="_blank" >-->
+<!--                <h1>+</h1>-->
+<!--                </a>-->
+<!--                <p>ADD</p>-->
+<!--            </div>-->
 
 
         <article>
@@ -98,7 +73,5 @@ $result = generateHtml($paperweights);
             echo $result;
             ?>
         </article>
-
-    </section>
 </body>
 </html>
