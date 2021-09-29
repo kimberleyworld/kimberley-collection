@@ -14,47 +14,44 @@
 <body>
 <form method="post" action="database.php" >
     <h3>Name</h3>
-    <input type="text" name="name" placeholder="Paper-weight name">
+    <input type="text" name="name" placeholder="Paper-weight name" class="fields">
     <br>
     <h3>Main Colour</h3>
-    <input type="text" name="main-colour" placeholder="Main colour">
+    <input type="text" name="main-colour" placeholder="Main colour" class="fields">
     <br>
     <h3>Category</h3>
-    <input list="category" placeholder="Pick a category">
-    <datalist id="category">
-        <option value="Trippy">
-        <option value="Boring">
-        <option value="Fun">
-        <option value="Silly">
-    </datalist>
+    <select name="category" id="category" class="fields">
+        <option value="trippy">Trippy</option>
+        <option value="boring">Boring</option>
+        <option value="fun">Fun</option>
+        <option value="silly">Silly</option>
+    </select>
     <br>
     <h3>Material</h3>
-    <input list="material" placeholder="Pick a material">
-    <datalist id="material">
-        <option value="Glass">
-        <option value="Metal">
-        <option value="Plastic">
-        <option value="Unknown">
-    </datalist>
+    <select name="material" id="material" class="fields">
+        <option value="glass">Glass</option>
+        <option value="metal">Metal</option>
+        <option value="plastic">Plastic</option>
+        <option value="unknown">Unknown</option>
+    </select>
     <br>
     <h3>Size</h3>
-    <input list="size" placeholder="Size">
-    <datalist id="size">
-        <option value="Small">
-        <option value="Medium">
-        <option value="Large">
-    </datalist>
+    <select name="size" id="size" class="fields">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+    </select>
     <br>
     <h3>Heavyness</h3>
-    <input list="heavyness" placeholder="Heavyness">
-    <datalist id="heavyness">
-        <option value="Light">
-        <option value="Weighty">
-        <option value="Heavy">
-    </datalist>
+    <select name="heavyness" id="heavyness" class="fields">
+        <option value="Light">Light</option>
+        <option value="Weighty">Weighty</option>
+        <option value="Heavy">Heavy</option>
+    </select>
     <br>
     <h3>Image URL</h3>
-    <input type="url" name="img-url" placeholder="Input the images URL here">
+    <input type="url" name="img-url" placeholder="Input the images URL here" class="fields">
+    <br>
     <br>
     <input type="submit" value="Submit">
 </form>
