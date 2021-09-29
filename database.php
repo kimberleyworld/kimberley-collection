@@ -1,11 +1,18 @@
 <?php
+/**
+ * @return PDO Links us to the db and give access
+ */
 function getDb(){
     $db = new PDO ('mysql:host=db; dbname=kimberley-collection', 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
 }
 
-function retrievePaperWeights($db){
+/**
+ * @param PDO $db
+ * @return array|false returns data we need to make the cards
+ */
+function retrievePaperWeights(PDO $db){
     $query = $db->prepare("SELECT `name`,`main-colour`,`category`,`material`,`size`,`heavyness`,`img-url` FROM `kimberley-collection`;");
 
     $query->execute();
@@ -13,6 +20,11 @@ function retrievePaperWeights($db){
     return $query->fetchAll();
 
 }
+
+/**
+ * @param array $paperweights
+ * @return string if empty displays error and returns each indevidual card
+ */
 function generateHtml(array $paperweights) : string
 {
     $displayString = '';
