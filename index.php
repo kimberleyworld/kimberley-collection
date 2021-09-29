@@ -4,9 +4,8 @@ require_once 'database.php';
 $db = getDb();
 $paperweights = retrievePaperWeights($db);
 $display = generateHtml($paperweights);
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +27,6 @@ $display = generateHtml($paperweights);
 <!--                </a>-->
 <!--                <p>ADD</p>-->
 <!--            </div>-->
-
 
 <article>
     <?php

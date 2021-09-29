@@ -35,9 +35,7 @@ class Database extends TestCase{
     }
     public function testMalformedgenerateHtml()
     {
-        //set the test up to expect a specific error to be thrown by PHP
         $this->expectException(TypeError::class);
-        //run the real function and pass the array in.
         generateHtml(3);
     }
 }

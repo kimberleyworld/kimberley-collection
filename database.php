@@ -21,8 +21,7 @@ function generateHtml(array $paperweights) : string
         $displayString = 'No info';
     }
 
-
-    foreach ($paperweights as $output) {
+    foreach ($paperweights as $output){
         $displayString .= '<div class="weightInfo">' . "<img src='" . $output['img-url'] . "'/><br>";
         $displayString .= '<div>' . "<h1>" . $output['name'] . "</h1>";
         $displayString .=  "<p>Colour: " .   $output['main-colour'] . "</p>" ;
@@ -32,21 +31,8 @@ function generateHtml(array $paperweights) : string
         $displayString .= "<p>Heavyness: " . $output['heavyness'] . "</p>" . '</div>';
         $displayString .= '</div>';
     }
-
     return $displayString;
 }
-
-
-
-//---------psudo---------------------
-//plan out basic HTML header structure
-//Header CSS
-//media querry header
-//Make main section html
-//create articles html
-//link db info on articles (function)
-// article CSS
-
 ?>
 
 
