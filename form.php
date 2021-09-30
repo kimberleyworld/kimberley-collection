@@ -2,15 +2,6 @@
 require_once 'database.php';
 $cleansedArray = validateData($_POST);
 
-if (strlen($cleansedArray['name']) > 2 && strlen($cleansedArray['main-colour']) > 2){
-    echo "<h1> Try again!<br> </h1><h3>Name and Main Colour field must each be less than 255 charecters, you have "
-        . strlen($cleansedArray['main-colour']) . " in Main Colour and " .strlen($cleansedArray['name']) . " in Name </h3>";
-} else if (strlen($cleansedArray['name']) > 2){
-    echo "<h1> Try again!<br> </h1><h3>Name field must be less than 255 charecters, you have " . strlen($cleansedArray['name']) . "</h3>";
-} else if (strlen($cleansedArray['main-colour']) > 2){
-    echo "<h1> Try again!<br> </h1><h3>Main Colour field must be less than 255 charecters, you have " . strlen($cleansedArray['main-colour']) . "</h3>";
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,13 +18,13 @@ if (strlen($cleansedArray['name']) > 2 && strlen($cleansedArray['main-colour']) 
 <body>
 <form method="post" action="form.php" >
     <h3>Name</h3>
-    <input type="text" name="name" placeholder="Paper-weight name" class="fields">
+    <input type="text" name="name" placeholder="Paper-weight name" class="fields" maxlength="255" required>
     <br>
     <h3>Main Colour</h3>
-    <input type="text" name="main-colour" placeholder="Main colour" class="fields">
+    <input type="text" name="main-colour" placeholder="Main colour" class="fields" maxlength="255" required>
     <br>
     <h3>Category</h3>
-    <select name="category" id="category" class="fields">
+    <select name="category" id="category" class="fields" required>
         <option value="trippy">Trippy</option>
         <option value="boring">Boring</option>
         <option value="fun">Fun</option>
@@ -41,7 +32,7 @@ if (strlen($cleansedArray['name']) > 2 && strlen($cleansedArray['main-colour']) 
     </select>
     <br>
     <h3>Material</h3>
-    <select name="material" id="material" class="fields">
+    <select name="material" id="material" class="fields" required>
         <option value="glass">Glass</option>
         <option value="metal">Metal</option>
         <option value="plastic">Plastic</option>
@@ -49,21 +40,21 @@ if (strlen($cleansedArray['name']) > 2 && strlen($cleansedArray['main-colour']) 
     </select>
     <br>
     <h3>Size</h3>
-    <select name="size" id="size" class="fields">
+    <select name="size" id="size" class="fields" required>
         <option value="small">Small</option>
         <option value="medium">Medium</option>
         <option value="large">Large</option>
     </select>
     <br>
     <h3>Heavyness</h3>
-    <select name="heavyness" id="heavyness" class="fields">
+    <select name="heavyness" id="heavyness" class="fields" required>
         <option value="Light">Light</option>
         <option value="Weighty">Weighty</option>
         <option value="Heavy">Heavy</option>
     </select>
     <br>
     <h3>Image URL</h3>
-    <input type="url" name="img-url" placeholder="Input the images URL here" class="fields">
+    <input type="url" name="img-url" placeholder="Input the images URL here" class="fields" required>
     <br>
     <br>
     <input type="submit" value="Submit">
