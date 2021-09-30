@@ -32,6 +32,26 @@ function generateHtml(array $paperweights) : string
     }
     return $displayString;
 }
+
+function collectData(string $input){
+    if (empty($input)){
+       echo 'field is empty';
+       }
+      else {
+            $dbReadyInfo = $input;
+       }
+    return $dbReadyInfo;
+    }
+
+echo collectData($_POST['name']);
+
+function sanitiseData(string $data){
+    $data = htmlspecialchars($data);
+    $data = trim($data);
+    $data= stripslashes($data);
+    return $data;
+}
+
 ?>
 
 
