@@ -33,23 +33,19 @@ function generateHtml(array $paperweights) : string
     return $displayString;
 }
 
-function collectData(string $input){
+/**
+ * @param array $input put in the user input via POST
+ * @return array cleansed data ready to go into DB
+ */
+function validateData(array $input) : array {
+    $cleansedData = [];
     if (empty($input)){
-       echo 'field is empty';
-       }
-      else {
-            $dbReadyInfo = $input;
-       }
-    return $dbReadyInfo;
+        $cleansedData = ['No info'];
     }
-
-echo collectData($_POST['name']);
-
-function sanitiseData(string $data){
-    $data = htmlspecialchars($data);
-    $data = trim($data);
-    $data= stripslashes($data);
-    return $data;
+    foreach ($input as $key=>$newPWData){
+        $cleansedData[$key] = htmlspecialchars($newPWData);
+    }
+    return $cleansedData;
 }
 
 ?>

@@ -1,3 +1,17 @@
+<?php
+require_once 'database.php';
+$cleansedArray = validateData($_POST);
+
+if (strlen($cleansedArray['name']) > 2 && strlen($cleansedArray['main-colour']) > 2){
+    echo "<h1> Try again!<br> </h1><h3>Name and Main Colour field must each be less than 255 charecters, you have "
+        . strlen($cleansedArray['main-colour']) . " in Main Colour and " .strlen($cleansedArray['name']) . " in Name </h3>";
+} else if (strlen($cleansedArray['name']) > 2){
+    echo "<h1> Try again!<br> </h1><h3>Name field must be less than 255 charecters, you have " . strlen($cleansedArray['name']) . "</h3>";
+} else if (strlen($cleansedArray['main-colour']) > 2){
+    echo "<h1> Try again!<br> </h1><h3>Main Colour field must be less than 255 charecters, you have " . strlen($cleansedArray['main-colour']) . "</h3>";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +20,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-
 <header>
     <h1>+</h1>
     <hr>
 </header>
 <body>
-<form method="post" action="database.php" >
+<form method="post" action="form.php" >
     <h3>Name</h3>
     <input type="text" name="name" placeholder="Paper-weight name" class="fields">
     <br>
