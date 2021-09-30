@@ -1,3 +1,8 @@
+<?php
+require_once 'database.php';
+$cleansedArray = validateData($_POST);
+var_dump($cleansedArray);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +17,7 @@
     <hr>
 </header>
 <body>
-<form method="post" action="database.php" >
+<form method="post" action="form.php" >
     <h3>Name</h3>
     <input type="text" name="name" placeholder="Paper-weight name" class="fields">
     <br>

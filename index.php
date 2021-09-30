@@ -6,6 +6,7 @@ $paperweights = retrievePaperWeights($db);
 $display = generateHtml($paperweights);
 
 
+
 ?>
 
 <!DOCTYPE html>
