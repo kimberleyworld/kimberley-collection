@@ -48,7 +48,7 @@ class Database extends TestCase{
 // if someone puts nothing in it should give an error
    public function testFailurevalidateData() {
         $fakeArray = [];
-       $expected = ['No info'];
+        $expected = ['No info'];
         $case = validateData($fakeArray);
         $this->assertEquals($expected, $case);
     }
