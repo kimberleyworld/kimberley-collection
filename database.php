@@ -33,14 +33,20 @@ function generateHtml(array $paperweights) : string
     return $displayString;
 }
 
-function validateData(array $input){
+/**
+ * @param array $input put in the user input via POST
+ * @return array cleansed data ready to go into DB
+ */
+function validateData(array $input) : array {
     $cleansedData = [];
+    if (empty($input)){
+        $cleansedData = ['No info'];
+    }
     foreach ($input as $key=>$newPWData){
         $cleansedData[$key] = htmlspecialchars($newPWData);
     }
     return $cleansedData;
 }
-
 
 ?>
 

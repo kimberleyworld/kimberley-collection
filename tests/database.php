@@ -38,5 +38,24 @@ class Database extends TestCase{
         $this->expectException(TypeError::class);
         generateHtml(3);
     }
+    public function testvalidateData(){
+        $badData = ['name'=>'&hhgabd><'];
+        $goodData = ['name'=>'&amp;hhgabd&gt;&lt;'];
+        $case = validateData($badData);
+        $expected = $goodData;
+            $this->assertEquals($case, $expected);
+    }
+// if someone puts nothing in it should give an error
+   public function testFailurevalidateData() {
+        $fakeArray = [];
+       $expected = ['No info'];
+        $case = validateData($fakeArray);
+        $this->assertEquals($expected, $case);
+    }
+    public function testMalformedvalidateData()
+    {
+        $this->expectException(TypeError::class);
+        validateData(3);
+    }
 }
 ?>
