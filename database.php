@@ -1,4 +1,5 @@
 <?php
+require_once 'form.php';
 function getDb(){
     $db = new PDO ('mysql:host=db; dbname=kimberley-collection', 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -48,6 +49,19 @@ function validateData(array $input) : array {
     return $cleansedData;
 }
 
+//function putIntoDb(array $userCleanData, PDO $db){
+//
+//    $query = $db->prepare ("INSERT INTO `kimberley-collection` (`name`,`category`,`main-colour`,`material`,`size`,`heavyness`,`img-url`) VALUES (':name' ,':category',':main-colour',':material',':size',':heavyness',':img-url')");
+//    $query->bind_param(':name', $userCleanData['name']);
+//    $query->bind_param(':category', $userCleanData['category']);
+//    $query->bind_param(':main-colour', $userCleanData['main-colour']);
+//    $query->bind_param(':material', $userCleanData['material']);
+//    $query->bind_param(':size', $userCleanData['size']);
+//    $query->bind_param(':heavyness', $userCleanData['heavyness']);
+//    $query->bind_param(':img-url', $userCleanData['img-url']);
+//    return $query->execute();
+//    echo 'yes';
+//}
 ?>
 
 

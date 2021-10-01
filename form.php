@@ -1,6 +1,20 @@
 <?php
 require_once 'database.php';
 $cleansedArray = validateData($_POST);
+$db = getDb();
+
+//$query = $db->prepare ("INSERT INTO `kimberley-collection` (`name`,`category`,`main-colour`,`material`,`size`,`heavyness`,`img-url`) VALUES (':name' ,':category',':main-colour',':material',':size',':heavyness',':img-url')");
+//$query->bind_param(':name', $userCleanData['name']);
+//$query->bind_param(':category', $userCleanData['category']);
+//$query->bind_param(':main-colour', $userCleanData['main-colour']);
+//$query->bind_param(':material', $userCleanData['material']);
+//$query->bind_param(':size', $userCleanData['size']);
+//$query->bind_param(':heavyness', $userCleanData['heavyness']);
+//$query->bind_param(':img-url', $userCleanData['img-url']);
+//return $query->execute();
+
+
+//echo putIntoDb(array $cleansedArray, PDO $db);
 
 ?>
 <!DOCTYPE html>
