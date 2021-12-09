@@ -4,10 +4,6 @@ require_once 'functions.php';
 $db = getDb();
 $paperweights = retrievePaperWeights($db);
 $display = generateHtml($paperweights);
-
-
-
-
 ?>
 
 <!DOCTYPE html>
