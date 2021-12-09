@@ -1,6 +1,5 @@
-
 body {
-    font-family: Optima, sans-serif;
+    color: saddlebrown;
 }
 header {
     margin: 10%;
@@ -9,6 +8,15 @@ header {
 }
 hr {
     margin: 10% 0;
+}
+.title{
+    font-size: 60px;
+    color: blue;
+    margin-bottom: 5%;
+}
+.subheading {
+    font-size: 30px;
+    margin: 0px;
 }
 article {
     margin: 0 10%;

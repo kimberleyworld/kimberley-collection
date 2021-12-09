@@ -1,9 +1,10 @@
 <?php
-require_once 'database.php';
+require_once 'functions.php';
 
 $db = getDb();
 $paperweights = retrievePaperWeights($db);
 $display = generateHtml($paperweights);
+
 
 
 
@@ -19,8 +20,8 @@ $display = generateHtml($paperweights);
 
 <body>
 <header>
-    <h1>Welcome to PAPERWEIGHT-WORLD!</h1>
-    <h3>Where no paper is lost</h3>
+    <p class="title">PAPERWEIGHT-WORLD!</p>
+    <p class="subheading">Where no paper is lost</p>
     <hr>
 </header>
 
